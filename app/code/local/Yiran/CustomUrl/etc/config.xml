@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<config>
+    <modules>
+        <Yiran_CustomUrl>
+            <version>0.1.0</version>
+        </Yiran_CustomUrl>
+    </modules>
+
+    <global>
+        <models>
+            <customurl>
+                <class>Yiran_CustomUrl_Model</class>
+            </customurl>
+        </models>
+        <events>
+            <catalog_product_save_before>
+                <observers>
+                    <customurl>
+                        <type>singleton</type>
+                        <class>customurl/observer</class>
+                        <method>updateurl</method>
+                    </customurl>
+                </observers>
+            </catalog_product_save_before>
+        </events>
+    </global>
+</config>
